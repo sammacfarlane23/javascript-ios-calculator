@@ -1,10 +1,13 @@
-const operationArray = [];
-const valueArray = [];
-let numberInputAllowed = true;
-let decimalAllowed = true;
-let displayValue = 0;
+const calculator = {
+    operationArray: [],
+    valueArray: [],
+    numberInputAllowed: true,
+    decimalAllowed: true,
+    displayValue: 0,
+}
+
 const display = document.querySelector('#numbers');
-display.textContent = displayValue;
+display.textContent = calculator.displayValue;
 
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((button) => {
@@ -15,9 +18,9 @@ numberButtons.forEach((button) => {
 
 const decimalButton = document.querySelector('.decimal-button');
 decimalButton.addEventListener('click', () => {
-    if (decimalAllowed) {
+    if (calculator.decimalAllowed) {
         checkValidInput(decimalButton.dataset.number);
-        decimalAllowed = false;
+        calculator.decimalAllowed = false;
     }
 });
 
@@ -45,8 +48,8 @@ operatorButtons.forEach((button) => {
 
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
-    if (operationArray.length > 0 && displayValue !== 0) {
+    if (calculator.operationArray.length > 0 && calculator.displayValue !== 0) {
         calculateEquals();
     }
-    decimalAllowed = true;
+    calculator.decimalAllowed = true;
 });
