@@ -1,0 +1,79 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        font-family: Helvetica;
+    }
+    
+    #page {
+        background: #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    #container {
+        border: 5px solid white;
+        border-radius: 20px;
+        background: black;
+        padding: 1rem;
+        max-width: 21rem;
+    }
+    
+    #spacer {
+        height: 5rem;
+    }
+    
+    #display {
+        height: 5rem;
+        padding: 0 0.8rem;
+    }
+    
+    #numbers {
+        color: white;
+        font-size: 4rem;
+        text-align: right;
+    }
+    
+    #buttons {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 0.8rem;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .button {
+        outline: none;
+        font-size: 2rem;
+        color: white;
+        width: 4rem;
+        height: 4rem;
+        border: none;
+        border-radius: 50%;
+        background: #222;
+    }
+    
+    .button--grey {
+        background: grey;
+        color: black;
+    }
+    
+    .button--orange {
+        background: orange;
+        font-weight: bold;
+    }
+    
+    .button--zero {
+        text-align: left;
+        padding-left: 1.5rem;
+        width: 100%;
+        border-radius: 4rem;
+        grid-column: 1 / 3;
+    }
